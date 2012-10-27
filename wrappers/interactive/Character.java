@@ -192,6 +192,12 @@ public abstract class Character implements Entity, Locatable, Rotatable, Identif
 	public boolean isIdle() {
 		return !isMoving() && !isInCombat() && getAnimation() == -1 && getInteracting() == null;
 	}
+	
+	//isPoisoned - if return value is less than 0, antipoison immunity is active
+	
+	private boolean isPoisoned() {
+                return Settings.get(102) > 0;
+        }
 
 	public String getMessage() {
 		try {
